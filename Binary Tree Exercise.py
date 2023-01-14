@@ -13,7 +13,7 @@ class BinarySearchTreeNode:
 
     def add_child(self, data):
         if data == self.data:
-            return  # node already exist
+            return
 
         if data < self.data:
             if self.left:
@@ -78,5 +78,14 @@ class BinarySearchTreeNode:
         elements.append(self.data)
 
         return elements
+
+
+def build_tree(elements):
+    root = BinarySearchTreeNode(elements[0])
+
+    for i in range(1, len(elements)):
+        root.add_child(elements[i])
+
+    return root
 
 
