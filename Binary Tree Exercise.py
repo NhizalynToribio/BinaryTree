@@ -89,11 +89,23 @@ def build_tree(elements):
     return root
 
 
-# This is the section where
+# This is the section where the if__name__ statement for main is located
 if __name__ == '__main__':
-    print("*---> Example Run Code <---*")
+    print("*---> Example Run Code using countries <---*")
     countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
     country_tree = build_tree(countries)
     print("\n The List is for Binary Tree:", countries)
     print("Is UK in the list?", country_tree.search("UK"))
     print("Is Sweden in the list?", country_tree.search("Sweden"))
+
+    # This is the section where The content of the Binary tree is the Letters of my Full Name
+    print("*---> Letters of my Full name as the Content of the Binary Tree  <---*")
+    fullname = ["N", "H", "I", "Z", "A", "L", "Y", "N", "P", "T", "O", "R", "I", "B", "I", "O"]
+    fullname_tree = build_tree(fullname)
+    print("Given List for Binary Tree:", fullname)
+    print("Is the given letter M in the list?", fullname_tree.search("M"))
+    print("Is the given letter B in the list?", fullname_tree.search("B"))
+
+    print("In Order Traversal of the list:", fullname_tree.in_order_traversal())
+    print("Post Order Traversal of the list:", fullname_tree.post_order_traversal())
+    print("Pre Order Traversal of the list:", fullname_tree.pre_order_traversal())
