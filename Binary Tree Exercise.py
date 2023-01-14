@@ -2,7 +2,11 @@ print("**************** PROGRAMMED BY: *****************")
 print("************** NHIZALYN TORIBIO ****************")
 print("*************** BSCOE 2 - 2 *******************")
 print("*************** BINARY TREE ********************")
+print("************** PART 1 AND 2 ********************")
 
+# The entire code contains the Part 1 & 2 of the Exercise
+# Part 1 - Min, Max, Sum, Pre and Post order traversal
+# Part 2 - Deleting Method
 
 # This is the Class Section of the Binary Tree Search Node
 class BinarySearchTreeNode:
@@ -131,7 +135,7 @@ if __name__ == '__main__':
     print("\n****---> Example Run Code using Countries <---****")
     countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
     country_tree = build_tree(countries)
-    print("The Content for Binary Tree:", countries)
+    print("The Content for Binary Tree (Countries):", countries)
     print("\nIs UK in the list?", country_tree.search("UK"))
     print("Is Sweden in the list?", country_tree.search("Sweden"))
 
@@ -145,12 +149,12 @@ if __name__ == '__main__':
     print("The Content for Binary Tree (Full Name):", fullname)
     print("Min:", fullname_tree.minimum())
     print("Max:", fullname_tree.maximum())
-    print("Is the letter N in the Content?", fullname_tree.search("N"))
-    print("Is the letter U in the Content?", fullname_tree.search("U"))
+    print("Is the letter N in the Content list?", fullname_tree.search("N"))
+    print("Is the letter U in the Content list?", fullname_tree.search("U"))
 
-    print("\nIn Order Traversal of the Content", fullname_tree.in_order_traversal())
-    print("Post Order Traversal of the Content:", fullname_tree.post_order_traversal())
-    print("Pre Order Traversal of the Content:", fullname_tree.pre_order_traversal())
+    print("\nIn Order Traversal of the Content list", fullname_tree.in_order_traversal())
+    print("Post Order Traversal of the Content list:", fullname_tree.post_order_traversal())
+    print("Pre Order Traversal of the Content list:", fullname_tree.pre_order_traversal())
 
     # This is the output of Part 2 Code of Delete Section
     print("\n****---> Part 2 : Deleting Letters to the Content Full Name <---****")
@@ -162,7 +166,7 @@ if __name__ == '__main__':
     # This section is where the user will ask to search the letter that she/he wants to search
     def locateletter():
         search_letter = input(str("Enter the letter that you want to search in the Content of the Binary Tree: "))
-        print("Is the letter "f"{search_letter} located in the list Content?", user_name_tree.search(search_letter))
+        print("Is the letter "f"{search_letter} located in the Content list?", user_name_tree.search(search_letter))
 
     print("\n\n*---> Users Input - Enter your Full name as the Content <---*")
     user_name = input(str("Enter your full name (provide space in every letter): "))
@@ -175,9 +179,9 @@ if __name__ == '__main__':
     locateletter()
     locateletter()
 
-    print("\nIn Order Traversal of the Content:", user_name_tree.in_order_traversal())
-    print("Post Order Traversal of the Content:", user_name_tree.post_order_traversal())
-    print("Pre Order Traversal of the Content:", user_name_tree.pre_order_traversal())
+    print("\nIn Order Traversal of the Content list:", user_name_tree.in_order_traversal())
+    print("Post Order Traversal of the Content list:", user_name_tree.post_order_traversal())
+    print("Pre Order Traversal of the Content list:", user_name_tree.pre_order_traversal())
 
     # This is the output of Part 2 Code of Delete Section
     print("\n****---> Part 2 : Deleting Letters to the Content Full Name <---****")
@@ -198,9 +202,9 @@ if __name__ == '__main__':
     print("Min:", numbers_tree.minimum())
     print("Max:", numbers_tree.maximum())
     print("Sum:", numbers_tree.calculate_sum())
-    print("In order traversal:", numbers_tree.in_order_traversal())
-    print("Post order traversal:", numbers_tree.post_order_traversal())
-    print("Pre order traversal:", numbers_tree.pre_order_traversal())
+    print("In order traversal of the content list:", numbers_tree.in_order_traversal())
+    print("Post order traversal of the content list:", numbers_tree.post_order_traversal())
+    print("Pre order traversal of the content list:", numbers_tree.pre_order_traversal())
 
     print("\nIs the number 17 on the list of numbers?", numbers_tree.search(17))
     print("Is the number 26 on the list of my numbers?", numbers_tree.search(26))
