@@ -128,7 +128,7 @@ def build_tree(elements):
 
 # This is the section where the if__name__ statement for main is located
 if __name__ == '__main__':
-    print("\n****---> Example Run Code using countries <---****")
+    print("\n****---> Example Run Code using Countries <---****")
     countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
     country_tree = build_tree(countries)
     print("The Content for Binary Tree:", countries)
@@ -141,7 +141,8 @@ if __name__ == '__main__':
                 "P",
                 "T", "O", "R", "I", "B", "I", "O"]
     fullname_tree = build_tree(fullname)
-    print("The Content for Binary Tree:", fullname)
+
+    print("The Content for Binary Tree (Full Name):", fullname)
     print("Min:", fullname_tree.minimum())
     print("Max:", fullname_tree.maximum())
     print("Is the letter N in the Content?", fullname_tree.search("N"))
@@ -152,9 +153,10 @@ if __name__ == '__main__':
     print("Pre Order Traversal of the Content:", fullname_tree.pre_order_traversal())
 
     # This is the output of Part 2 Code of Delete Section
+    print("\n****---> Part 2 : Deleting Letters to the Content Full Name <---****")
     fullname_tree.delete("A")
-    print("After deleting the letter E", fullname_tree.in_order_traversal())
-    fullname_tree.delete("L")
+    print("After deleting the letter A", fullname_tree.in_order_traversal())
+    fullname_tree.delete("N")
     print("After deleting the letter N", fullname_tree.in_order_traversal())
 
     # This section is where the user will ask to search the letter that she/he wants to search
@@ -162,22 +164,56 @@ if __name__ == '__main__':
         search_letter = input(str("Enter the letter that you want to search in the Content of the Binary Tree: "))
         print("Is the letter "f"{search_letter} located in the list Content?", user_name_tree.search(search_letter))
 
-    print("\n*---> Users Input - Enter your Full name as the Content <---*")
+    print("\n\n*---> Users Input - Enter your Full name as the Content <---*")
     user_name = input(str("Enter your full name (provide space in every letter): "))
     user_name_list = user_name.split()
     user_name_tree = build_tree(user_name_list)
-    print("The Content for Binary Tree:", user_name_list)
-    print("Min:", fullname_tree.minimum())
-    print("Max:", fullname_tree.maximum())
+    print("The Content for Binary Tree (Users Full Name):", user_name_list)
+    print("Min:", user_name_tree.minimum())
+    print("Max:", user_name_tree.maximum())
 
     locateletter()
     locateletter()
-
-    fullname_tree.delete("A")
-    print("After deleting the letter E", fullname_tree.in_order_traversal())
-    fullname_tree.delete("L")
-    print("After deleting the letter N", fullname_tree.in_order_traversal())
 
     print("\nIn Order Traversal of the Content:", user_name_tree.in_order_traversal())
     print("Post Order Traversal of the Content:", user_name_tree.post_order_traversal())
     print("Pre Order Traversal of the Content:", user_name_tree.pre_order_traversal())
+
+    # This is the output of Part 2 Code of Delete Section
+    print("\n****---> Part 2 : Deleting Letters to the Content Full Name <---****")
+    user_name_tree.delete("a")
+    print("After deleting the letter a", user_name_tree.in_order_traversal())
+    user_name_tree.delete("n")
+    print("After deleting the letter n", user_name_tree.in_order_traversal())
+
+    print("\n------------------------------------------------------------------------")
+
+# This section is the complete Exercise Part 1 and 2 using numbers to get the Sum of all the Content
+if __name__ == '__main__':
+
+    numbers = [17, 4, 1, 20, 9, 23, 18, 34]
+    numbers_tree = build_tree(numbers)
+    print("\nThe Content for Binary Tree (Number):", numbers)
+    # This is the Part 1 : Exercise using numbers
+    print("Min:", numbers_tree.minimum())
+    print("Max:", numbers_tree.maximum())
+    print("Sum:", numbers_tree.calculate_sum())
+    print("In order traversal:", numbers_tree.in_order_traversal())
+    print("Post order traversal:", numbers_tree.post_order_traversal())
+    print("Pre order traversal:", numbers_tree.pre_order_traversal())
+
+    print("\nIs the number 17 on the list of numbers?", numbers_tree.search(17))
+    print("Is the number 26 on the list of my numbers?", numbers_tree.search(26))
+
+    # This is the Part 2 : Exercise using numbers
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    numbers_tree.delete(20)
+    print("\nAfter deleting the number 20", numbers_tree.in_order_traversal())
+
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    numbers_tree.delete(9)
+    print("After deleting the number 9", numbers_tree.in_order_traversal())
+
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    numbers_tree.delete(17)
+    print("After deleting the number 17 ", numbers_tree.in_order_traversal())
