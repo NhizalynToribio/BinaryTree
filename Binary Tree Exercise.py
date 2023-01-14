@@ -94,7 +94,7 @@ if __name__ == '__main__':
     print("*---> Example Run Code using countries <---*")
     countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
     country_tree = build_tree(countries)
-    print("\n The List is for Binary Tree:", countries)
+    print("\n The Content for Binary Tree:", countries)
     print("Is UK in the list?", country_tree.search("UK"))
     print("Is Sweden in the list?", country_tree.search("Sweden"))
 
@@ -102,10 +102,28 @@ if __name__ == '__main__':
     print("*---> Letters of my Full name as the Content of the Binary Tree  <---*")
     fullname = ["N", "H", "I", "Z", "A", "L", "Y", "N", "P", "T", "O", "R", "I", "B", "I", "O"]
     fullname_tree = build_tree(fullname)
-    print("Given List for Binary Tree:", fullname)
-    print("Is the given letter M in the list?", fullname_tree.search("M"))
-    print("Is the given letter B in the list?", fullname_tree.search("B"))
+    print("The Content for Binary Tree:", fullname)
+    print("Is the letter N in the list?", fullname_tree.search("N"))
+    print("Is the letter I in the list?", fullname_tree.search("I"))
 
     print("In Order Traversal of the list:", fullname_tree.in_order_traversal())
     print("Post Order Traversal of the list:", fullname_tree.post_order_traversal())
     print("Pre Order Traversal of the list:", fullname_tree.pre_order_traversal())
+
+    # This section is where the user will ask to search the letter that she/he wants to search
+    def locateletter():
+        search_letter = input(str("Enter the letter that you want to search in the Content of the Binary Tree: "))
+        print("\nIs the letter "f"{search_letter} located in the list Content?", user_name_tree.search(search_letter))
+    print("\n*---> Users Input - Enter the your Full name as the Content <---*")
+    user_name = input(str("Enter your full name (provide space in every letter): "))
+    user_name_list = user_name.split()
+    user_name_tree = build_tree(user_name_list)
+    print("The Content for Binary Tree:", user_name_list)
+
+    locateletter()
+    locateletter()
+
+    print("In Order Traversal of the list:", user_name_tree.in_order_traversal())
+    print("Post Order Traversal of the list:", user_name_tree.post_order_traversal())
+    print("Pre Order Traversal of the list:", user_name_tree.pre_order_traversal())
+
