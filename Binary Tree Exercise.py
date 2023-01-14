@@ -110,7 +110,7 @@ class BinarySearchTreeNode:
             elif self.right is None:
                 return self.right
 
-            max_val = self.left.find_max()
+            max_val = self.left.maximum()
             self.data = max_val
             self.left = self.left.delete(max_val)
 
@@ -137,7 +137,9 @@ if __name__ == '__main__':
 
     # This is the section where The content of the Binary tree is the Letters of my Full Name
     print("\n****---> Letters of my Full name as the Content of the Binary Tree  <---****")
-    fullname = ["N", "H", "I", "Z", "A", "L", "Y", "N", "P", "T", "O", "R", "I", "B", "I", "O"]
+    fullname = ["N", "H", "I", "Z", "A", "L", "Y", "N",
+                "P",
+                "T", "O", "R", "I", "B", "I", "O"]
     fullname_tree = build_tree(fullname)
     print("The Content for Binary Tree:", fullname)
     print("Min:", fullname_tree.minimum())
@@ -149,19 +151,32 @@ if __name__ == '__main__':
     print("Post Order Traversal of the Content:", fullname_tree.post_order_traversal())
     print("Pre Order Traversal of the Content:", fullname_tree.pre_order_traversal())
 
+    # This is the output of Part 2 Code of Delete Section
+    fullname_tree.delete("A")
+    print("After deleting the letter E", fullname_tree.in_order_traversal())
+    fullname_tree.delete("L")
+    print("After deleting the letter N", fullname_tree.in_order_traversal())
+
     # This section is where the user will ask to search the letter that she/he wants to search
     def locateletter():
-
         search_letter = input(str("Enter the letter that you want to search in the Content of the Binary Tree: "))
         print("Is the letter "f"{search_letter} located in the list Content?", user_name_tree.search(search_letter))
+
     print("\n*---> Users Input - Enter your Full name as the Content <---*")
-    user_name = input(str("\nEnter your full name (provide space in every letter): "))
+    user_name = input(str("Enter your full name (provide space in every letter): "))
     user_name_list = user_name.split()
     user_name_tree = build_tree(user_name_list)
     print("The Content for Binary Tree:", user_name_list)
+    print("Min:", fullname_tree.minimum())
+    print("Max:", fullname_tree.maximum())
 
     locateletter()
     locateletter()
+
+    fullname_tree.delete("A")
+    print("After deleting the letter E", fullname_tree.in_order_traversal())
+    fullname_tree.delete("L")
+    print("After deleting the letter N", fullname_tree.in_order_traversal())
 
     print("\nIn Order Traversal of the Content:", user_name_tree.in_order_traversal())
     print("Post Order Traversal of the Content:", user_name_tree.post_order_traversal())
